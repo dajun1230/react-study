@@ -45,13 +45,13 @@ const jsx = (
     <a href="https://www.baidu.com">百度</a>
     <ClassComponent name="class" />
     <FunctionComponent name="function" />
-    <>
+    {/* <>
       <p>aaa</p>
       <p>bbb</p>
     </>
     {
       [1, 2].map(item => <div key={item}>{item}</div>)
-    }
+    } */}
   </div>
 );
 
