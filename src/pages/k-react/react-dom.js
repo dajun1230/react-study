@@ -104,8 +104,6 @@ function updateFunctionComponent(fiber) {
   // const node = createNode(vvnode);
   // return node;
 
-
-  console.log(fiber)
   const { type, props } = fiber;
   const children = [type(props)];
   reconcileChildren(fiber, children);
@@ -153,7 +151,7 @@ function updateHostComponent(fiber) {
   // 协调子元素
   const { children } = fiber.props;
   reconcileChildren(fiber, children);
-  console.log(fiber);
+  // console.log(fiber);
 }
 
 function performUnitOfWork(fiber) {
@@ -226,7 +224,7 @@ function commitWorker(fiber) {
   const parentNode = parentNodeFiber.node;
 
   if (fiber.effectTag === PLACEMENT && fiber.node !== null) {
-    // 新增插入
+    // 新增插入 (dom父子关系插入)
     parentNode.appendChild(fiber.node);
   }
 
