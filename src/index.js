@@ -1,5 +1,5 @@
 // 第一阶段：学习书写react相关插件
-// import React, { Component } from 'react';
+// import React, { Component, useState } from 'react';
 // import ReactDOM from 'react-dom';
 // import { Provider } from 'react-redux';
 
@@ -18,7 +18,7 @@
 
 // 第二阶段：学习书写react
 import React from './pages/k-react';
-import ReactDOM from './pages/k-react/react-dom';
+import ReactDOM, { useState } from './pages/k-react/react-dom';
 import Component from './pages/k-react/Component';
 import './border.css';
 
@@ -36,7 +36,12 @@ class ClassComponent extends Component {
 }
 
 function FunctionComponent(props) {
-  return (<div className="border">函数组件 - {props.name}</div>)
+  const [count, setCount] = useState(0);
+  return (<div className="border">
+    函数组件 - {props.name}
+    <button onClick={() => setCount(count + 1)}>{count}</button>
+    {count % 2 ? <button>click</button> : <span>omg</span>}
+  </div>)
 }
 
 const jsx = (
